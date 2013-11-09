@@ -68,7 +68,7 @@ The frontend is built with `angularjs`, which is pretty simple if you have exper
 
 ### Backend
 
-The frontend is built with nodejs. If you have experience with Ruby/PHP etc you should be fine copy->pasting to get you started. The server is based on `expressjs` & the sockets are using `firebase`.
+The frontend is built with `nodejs`. If you have experience with `ruby` or `PHP` etc you should be fine copy->pasting to get you started. The server is based on `expressjs` & the sockets are using `firebase`.
 
 - Create a new controller in `/server/controllers` or a service in `/server/services`. (it may be easier to copy an existing one)
 - Edit `/server/app.js` in the `// Controllers` or `// Services` section to add your new feature. (it may be easier to copy an existing one)
