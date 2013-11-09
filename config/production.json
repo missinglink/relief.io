@@ -1,0 +1,9 @@
+{
+  "http.host": "127.0.0.1",
+  "http.port": "<-env.PORT",
+  "http.public": "http://localhost:3100",
+  "mongo.host": "10.0.1.122",
+  "mongo.port": 27017,
+  "mongo.name": "hack4good",
+  "market.syncInterval": 61000
+}

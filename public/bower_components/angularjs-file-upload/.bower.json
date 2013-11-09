@@ -1,0 +1,15 @@
+{
+  "name": "angularjs-file-upload",
+  "homepage": "https://github.com/danialfarid/angular-file-upload",
+  "version": "0.1.4",
+  "_release": "0.1.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.4",
+    "commit": "05af3ee38d9e6e62df88017af55bd7d670a93d1b"
+  },
+  "_source": "git://github.com/danialfarid/angular-file-upload.git",
+  "_target": "~0.1.4",
+  "_originalSource": "angularjs-file-upload",
+  "_direct": true
+}

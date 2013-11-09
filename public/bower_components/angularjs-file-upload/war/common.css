@@ -1,0 +1,36 @@
+body {
+	font-family: Helvetica, arial, freesans, clean, sans-serif;	
+}
+
+input[type="file"] {
+	width: 7em;
+	width: 6.2em \0/IE9;
+	height: 1.5em;
+	margin: 5px;
+}
+
+input[multiple] {
+	width: 7.5em;
+	width: 6.2em \0/IE9;
+}
+
+.sel-file {
+	padding: 0 5px;
+	font-size: smaller;
+	color: grey;
+}
+
+.response {
+	padding-top: 30px;
+}
+
+.response li {
+	color: blue;
+	font-size: smaller; 
+}
+
+/* for IE*/
+.js-fileapi-wrapper {
+	display: inline-block;
+	vertical-align: middle;	
+}

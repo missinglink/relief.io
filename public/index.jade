@@ -1,0 +1,66 @@
+!!! 5
+html(data-ng-app="hack4good")
+  head
+
+    // Web Fonts 
+    link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans", type="text/css")
+    
+    // Core Dependencies 
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+    script(src="/bower_components/underscore/underscore-min.js")
+    script(type="text/javascript", src="/bower_components/angular/angular.js")
+    script(type="text/javascript", src="/bower_components/jquery-timeago/jquery.timeago.js")
+    
+    // Twitter Bootstrap 
+    script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
+    link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/bower_components/font-awesome/css/font-awesome.css")
+
+    // 3rd Party Angular Modules 
+    script(type="text/javascript", src="/bower_components/angular-flash/dist/angular-flash.js")
+
+    // File Uploads 
+    script(src="/bower_components/angularjs-file-upload/angular-file-upload.min.js")
+    
+    // Stylesheets 
+    link(rel="stylesheet", href="/style/layout.css")
+    link(rel="stylesheet", href="/style/carousel.css")
+    
+    // Angular JS App 
+    script(src="/app.js")
+    script(src="/services.js")
+    
+    // ========= Features ========= 
+    
+    // Example 
+    script(src="/feature/example/IndexController.js")
+    script(src="/feature/example/init.js")
+    link(rel="stylesheet", href="/feature/example/example.css")
+
+    // Home 
+    script(src="/feature/home/IndexController.js")
+    script(src="/feature/home/init.js")
+
+    // Twitter 
+    script(src="/feature/twitterwidget/IndexController.js")
+    script(src="/feature/twitterwidget/init.js")
+
+    // .. more features
+  
+  // Pass View & Session Variables from Server Side to Angular
+  body(ng-init="flash=#{JSON.stringify(flash)}; user=#{JSON.stringify(user)};")
+
+    .container
+      .header
+        ul.nav.nav-pills.pull-right
+          li.active
+            a(href="#/")
+              i.icon-home &nbsp;Home
+          li
+            a(href="#/twitter")
+              i.icon-twitter &nbsp;Twitter
+
+        h3.text-muted &nbsp;
+
+      // Main Content Section 
+      #main(data-ng-view="")

@@ -1,0 +1,28 @@
+
+body {
+  background-color: #f0f1f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.panel {
+  background: white;
+  border: 1px solid #cbcbcb; /*LH*/
+
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+  -moz-box-shadow: 0 0 5px #e1e1e1; /*LH*/
+  -webkit-box-shadow: 0 0 5px #e1e1e1; /*LH*/
+  box-shadow: 0 0 5px #e1e1e1; /*LH*/
+
+  margin-bottom: 15px; /*LH*/
+}
+
+#content {
+  padding: 20px;
+}

@@ -1,0 +1,30 @@
+[
+	{
+		"name":"Maryland Prepares",
+		"url":"https://play.google.com/store/apps/details?id=com.nicusa.MDPrepares"
+	},
+	{
+		"name":"FEMA",
+		"url":"https://play.google.com/store/apps/details?id=gov.fema.mobile.android&hl=en"
+	},
+	{
+		"name":"Red Cross Safe and Well",
+		"url":"https://safeandwell.communityos.org/cms/index.php"
+	},
+	{
+		"name":"MD+RA",
+		"url":["https://itunes.apple.com/us/app/mobile-disaster-relief/id576940826?mt=8","http://www.kindsnacks.com/dtkt/kindawesome-mobile-disaster-relief-app-interview-with-scott-kurttila/"]
+	},
+	{
+		"name":"MIT",
+		"url":["http://web.mit.edu/newsoffice/2013/building-disaster-relief-phone-apps-0930.html","http://dig.csail.mit.edu/2013/Papers/IJCAIWorkshop/IJCAI_Workshop_SemanticCity.pdf"]
+	},
+	{
+		"name":"Microsoft HelpBridge",
+		"url":"https://play.google.com/store/apps/details?id=com.microsoft.helpbridge"
+	},
+	{
+		"name":"Global Emergency Overview",
+		"url":"https://play.google.com/store/apps/details?id=org.acaps.acaps"
+	}
+]

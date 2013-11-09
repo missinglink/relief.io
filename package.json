@@ -1,0 +1,17 @@
+{
+  "name": "hack4good",
+  "version": "0.0.0",
+  "description": "hack4good",
+  "dependencies": {
+    "express": "~3.3.5",
+    "mongodb": "~1.3.18",
+    "jade": "~0.35.0",
+    "connect-flash": "~0.1.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "start": "node server/app.js config/local.json"
+  }
+}

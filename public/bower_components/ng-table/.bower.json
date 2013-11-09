@@ -1,0 +1,22 @@
+{
+  "name": "ng-table",
+  "version": "0.2.0",
+  "main": "ng-table.js",
+  "ignore": [
+    "examples",
+    "src"
+  ],
+  "dependencies": {
+    "angular": "~1.0.6"
+  },
+  "homepage": "https://github.com/esvit/ng-table",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "9411abfda99800b4c90d2647f2eebde43dc15f7e"
+  },
+  "_source": "git://github.com/esvit/ng-table.git",
+  "_target": "~0.2.0",
+  "_direct": true
+}
