@@ -34,7 +34,7 @@ app.controller( 'MapIndexController', function( $scope ) {
 	  appId: 'yKqVsh6qFoKdZQmFP2Cn'
 	}).addTo($scope.map);
 
-  $scope.map.setView( [ 11.609193,123.398438 ], 6 );
+  $scope.map.setView( [ 12.46876, 122.783203 ], 6 );
 
   tweets.local.on( 'child_added', function( message ){
 
