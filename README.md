@@ -9,6 +9,9 @@ The app is built in nodejs/angular, uses firebase for the sockets & has some mon
 
 Please help out where you can, I'm happy for this repo to be the base for a bunch of projects that can all live at http://relief.io or you are free to fork it and create another site.
 
+Join in the chat here: https://www.hipchat.com/g9bBgsIwG
+Hackathon page: https://geekli.st/hackathon/52793a2660fb3f52d50001f8
+
 ## Setting up for development
 
 Note: you will need `node` and `npm` installed first.
@@ -46,7 +49,7 @@ You should now be able to access the server here: `http://localhost:3000/`
 - Angularjs components are split up in to `features` in the `/public/features` directory.
 - Inside each feature can be controllers, services, styles and views related to that specific feature.
 - Each feature may include an `init.js` file to initialize routes and services.
-- Genenic styles & services can live in `/public/style` & `/public/services.js`.
+- Generic styles & services can live in `/public/style` & `/public/services.js`.
 - The main angular app config lives in `/public/app.js`
 - The layout file is rendered in jade and passes session and user info from the backend to the frontend. This lives in `/public/index.jade`
 
