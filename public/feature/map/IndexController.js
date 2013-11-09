@@ -3,6 +3,11 @@ app.controller( 'MapIndexController', function( $scope ) {
 
   $scope.tweets = [];
 
+  // be kind to the browsers memory and delete old tweets every 10 secs
+  setTimeout( function(){
+    $scope.tweets = $scope.tweets.splice(-30);
+  }, 10000 );
+
   function addTweet( tweet )
   {
     var popup = L.popup()
