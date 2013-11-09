@@ -33,7 +33,7 @@ function emit( label, tweet ) {
 
 var ev = new EventEmitter();
 client1.on( 'tweet', function ( tweet ) {
-  if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Filipina|Pontevedra|Donate|Flood|Survive|Safety|Airport|Evacuat|Rescue|Relief|Damage|Victim|Injured|Hurt|Help|Aftermath|Storm/i ) ){
+  if( tweet.text && tweet.text.match( /Haiyan|Yolanda|Typhoon|Filipina|Pontevedra|Donate|Flood|Survive|Safety|Airport|Evacuat|Rescue|Relief|Damage|Victim|Injured|Hurt|Help|Aftermath|Storm/i ) ){
 
     var geo;
     if( tweet.geo ) geo = tweet.geo.coordinates;
