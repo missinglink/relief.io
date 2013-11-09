@@ -33,7 +33,7 @@ function emit( label, tweet ) {
 
 var ev = new EventEmitter();
 client1.on( 'tweet', function ( tweet ) {
-  if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Pontevedra|RescuePH/i ) ){
+  if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Pontevedra|RescuePH|ReliefPH|Dead|Injured|Hurt|Help/i ) ){
 
     var geo;
     if( tweet.geo ) geo = tweet.geo.coordinates;
@@ -59,7 +59,7 @@ client1.on( 'tweet', function ( tweet ) {
 });
 
 client1.start(
-  ['Haiyan','Yolanda','Typhoon','Philippines','#YolandaPH','#Pontevedra','#RescuePH'],
+  ['Haiyan','Yolanda','Typhoon','Philippines','#YolandaPH','#Pontevedra','#RescuePH','#ReliefPH'],
   ['116.05957,5.441022','127.265625,19.601194']
 );
 // client1.start(null,['116.05957,5.441022','127.265625,19.601194']);
