@@ -3,11 +3,6 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
 
   $scope.tweets = [];
 
-  // Be kind to the browsers memory and delete old tweets every 10 secs
-  setInterval( function(){
-    $scope.tweets = $scope.tweets.splice(-30);
-  }, 10000 );
-
   // Create a new popup on the map
   function addTweet( tweet )
   {
@@ -26,10 +21,10 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   // Connect to firebase to get tweets
   var myRootRef = new Firebase( $rootScope.config['firebase.host'] );
   var tweets = {
-    local: myRootRef.child('tweet_local').limit(5),
-    overseas: myRootRef.child('tweet_overseas').limit(5),
-    all: myRootRef.child('tweet').limit(5)
-  }
+    local: myRootRef.child('tweet_local').limit(3),
+    overseas: myRootRef.child('tweet_overseas').limit(1),
+    all: myRootRef.child('tweet').limit(1)
+  };
 
   // Init the map
   $scope.map = L.map( 'map', { zoomControl:false } );
@@ -37,7 +32,7 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
     devID: 'pT52rESblK2luN6D0562LQ',
     appId: 'yKqVsh6qFoKdZQmFP2Cn'
   }).addTo( $scope.map );
-  
+
   // Center map
   $scope.map.setView( [ 12.46876, 118.698438 ], 6 );
 
@@ -48,17 +43,20 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
     // console.log( 'local', tweet );
   });
 
-  // On overseas tweets
-  // tweets.overseas.on( 'child_added', function( message ){
-  //   var tweet = message.val();
-  //   addTweet( tweet );
-  //   console.log( 'overseas', tweet.text );
-  // });
+  $scope.clearTweetsToLoadMore = function() {
+    $scope.tweets = [];
+  };
 
-  // On any tweet the server sends
-  tweets.all.on( 'child_added', function( message ){
-
+  loadMoreTweets = function(amount, message) {
     var tweet = message.val();
+    if($scope.tweets.length < 6) {
+      formatTweet(tweet);
+      $scope.tweets.push( tweet );
+    }
+  };
+
+
+  formatTweet = function(tweet) {
     $scope.$apply( function(){
       if( tweet.entities ){
         if( Array.isArray( tweet.entities.user_mentions ) ){
@@ -84,8 +82,19 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
         }
         // console.log( JSON.stringify( tweet.entities.urls ) );
       }
-      $scope.tweets.push( tweet );
     });
+  };
+
+  // On overseas tweets
+  // tweets.overseas.on( 'child_added', function( message ){
+  //   var tweet = message.val();
+  //   addTweet( tweet );
+  //   console.log( 'overseas', tweet.text );
+  // });
+
+  // On any tweet the server sends
+  tweets.all.on( 'child_added', function( message ){
+    loadMoreTweets(5, message);
 
     // if( tweet.text.match( /yfrog|twitpic|twimg|twitter|img|pic/ ) ){
     //   console.log( tweet.text );
