@@ -1,9 +1,9 @@
 
 app.config( function( $routeProvider ) {
   $routeProvider
-    .when( '/', {
+    .when( '/home', {
       controller: 'HomeIndexController',
       templateUrl: '/feature/home/index.html'
     })
-	.otherwise({ redirectTo: '/' });
+	.otherwise({ redirectTo: '/map' });
 });
