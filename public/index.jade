@@ -50,6 +50,9 @@ html(data-ng-app="hack4good")
   // Pass View & Session Variables from Server Side to Angular
   body(ng-init="flash=#{JSON.stringify(flash)}; user=#{JSON.stringify(user)};")
 
+    // Github Ribbon (fork me) 
+    .ribbon(data-ng-include="'/feature/home/github-ribbon.html'")
+
     .container
       .header
         ul.nav.nav-pills.pull-right
