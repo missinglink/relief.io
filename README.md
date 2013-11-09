@@ -13,6 +13,9 @@ Join in the chat here: https://www.hipchat.com/g9bBgsIwG
 
 Hackathon page: https://geekli.st/hackathon/52793a2660fb3f52d50001f8
 
+Please star the repo and spread the word on twitter.
+https://twitter.com/insertcoffee/statuses/399232533910409216
+
 ## Setting up for development
 
 Note: you will need `node` and `npm` installed first.
