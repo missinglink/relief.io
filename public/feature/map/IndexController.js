@@ -15,7 +15,7 @@ app.controller( 'MapIndexController', function( $scope ) {
         .setContent( tweet.text )
         .addTo( $scope.map );
 
-    console.log( popup );
+    // console.log( popup );
 
     setTimeout( function(){
       popup._close();
@@ -23,7 +23,7 @@ app.controller( 'MapIndexController', function( $scope ) {
   }
 
   var datestamp = (''+new Date().getTime()).slice(0,10);
-  console.log( 'datestamp', datestamp );
+  // console.log( 'datestamp', datestamp );
 
   var myRootRef = new Firebase('https://reliefio.firebaseio.com');
   var tweets = {
@@ -45,7 +45,7 @@ app.controller( 'MapIndexController', function( $scope ) {
 
     var tweet = message.val();
     addTweet( tweet );
-    console.log( 'local', tweet );
+    // console.log( 'local', tweet );
   });
 
   // tweets.overseas.on( 'child_added', function( message ){
@@ -60,7 +60,7 @@ app.controller( 'MapIndexController', function( $scope ) {
     var tweet = message.val();
     // console.log( 'tweet', message.val() );
     // $.flash(tweet.text);
-    console.log( 'push tweet', tweet.text );
+    // console.log( 'push tweet', tweet.text );
     $scope.$apply( function(){
       $scope.tweets.push( tweet );
     });
