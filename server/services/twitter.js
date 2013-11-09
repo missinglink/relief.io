@@ -34,17 +34,22 @@ function emit( label, tweet ) {
 var ev = new EventEmitter();
 client1.on( 'tweet', function ( tweet ) {
   if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Pontevedra|RescuePH/i ) ){
-    if( tweet && tweet.geo && tweet.geo.coordinates ){
-      if( parseFloat( tweet.geo.coordinates[0] ) > 5.441022 &&
-          parseFloat( tweet.geo.coordinates[0] ) < 19.601194 &&
-          parseFloat( tweet.geo.coordinates[1] ) > 116.05957 &&
-          parseFloat( tweet.geo.coordinates[1] ) < 127.265625 ){
+
+    var geo;
+    if( tweet.geo ) geo = tweet.geo.coordinates;
+    else if( tweet.coordinates ) geo = tweet.coordinates;
+
+    if( 'undefined' !== typeof geo ){
+      if( parseFloat( geo[0] ) > 5.441022 &&
+          parseFloat( geo[0] ) < 19.601194 &&
+          parseFloat( geo[1] ) > 116.05957 &&
+          parseFloat( geo[1] ) < 127.265625 ){
         ev.emit( 'tweet_local', tweet );
         emit( 'TWEET.LOCAL', tweet );
       }
       else {
         ev.emit( 'tweet_overseas', tweet );
-        emit( 'TWEET.OVERSEAS', tweet, tweet.geo.coordinates );
+        emit( 'TWEET.OVERSEAS', tweet, geo );
       }
     }
     ev.emit( 'tweet', tweet );
