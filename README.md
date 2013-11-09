@@ -1,5 +1,5 @@
-Hack4Good--Typhoon-Haiyan
-=========================
+Hack4Good - Typhoon Haiyan
+==========================
 
 This is a repo for ideas, data, and code to help with disaster relief in the Philippines.
 
