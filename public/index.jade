@@ -2,6 +2,8 @@
 html(data-ng-app="hack4good")
   head
 
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
     // Web Fonts 
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans", type="text/css")
     
@@ -16,6 +18,11 @@ html(data-ng-app="hack4good")
     link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
     link(rel="stylesheet", href="/bower_components/font-awesome/css/font-awesome.css")
 
+    // Leaflet
+    link(rel="stylesheet", href="/vendor/leaflet/leaflet.css")
+    script(type="text/javascript", src="/vendor/leaflet/leaflet.js")
+    script(type="text/javascript", src="/vendor/leaflet-providers.js")
+
     // 3rd Party Angular Modules 
     script(type="text/javascript", src="/bower_components/angular-flash/dist/angular-flash.js")
 
@@ -25,6 +32,7 @@ html(data-ng-app="hack4good")
     // Stylesheets 
     link(rel="stylesheet", href="/style/layout.css")
     link(rel="stylesheet", href="/style/carousel.css")
+    link(rel="stylesheet", href="/style/map.css")
     
     // Angular JS App 
     script(src="/app.js")
@@ -40,6 +48,10 @@ html(data-ng-app="hack4good")
     // Home 
     script(src="/feature/home/IndexController.js")
     script(src="/feature/home/init.js")
+
+    // Map 
+    script(src="/feature/map/IndexController.js")
+    script(src="/feature/map/init.js")
 
     // Twitter 
     script(src="/feature/twitterwidget/IndexController.js")
@@ -62,6 +74,9 @@ html(data-ng-app="hack4good")
           li
             a(href="#/twitter")
               i.icon-twitter &nbsp;Twitter
+          li
+            a(href="#/map")
+              i.icon-globe &nbsp;Map
 
         h3.text-muted &nbsp;
 
