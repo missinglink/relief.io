@@ -25,6 +25,8 @@ ul.nav a {
 	/*background-color: #fff;*/
 	z-index: 100;
 	list-style: none;
+	overflow: hidden;
+	overflow-y: auto;
 }
 
 #tweets li {
