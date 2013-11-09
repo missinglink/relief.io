@@ -51,7 +51,7 @@ client1.on( 'tweet', function ( tweet ) {
   if( tweet.coordinates ) console.error( 'NO GEO BUT YES COORDINATES!' );
 });
 
-client1.start(['Haiyan','Yolanda','SuperTyphoon','#YolandaPH','#PrayForThePhilippines','#Pontevedra','#RescuePH']);
+client1.start(['Haiyan','Yolanda','Typhoon','Philippines','#YolandaPH','#PrayForThePhilippines','#Pontevedra','#RescuePH']);
 // client1.start(null,['116.05957,5.441022','127.265625,19.601194']);
 
 module.exports = ev;
