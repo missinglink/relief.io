@@ -33,24 +33,24 @@ function emit( label, tweet ) {
 
 var ev = new EventEmitter();
 client1.on( 'tweet', function ( tweet ) {
-  if( tweet && tweet.geo && tweet.geo.coordinates ){
-    if( parseFloat( tweet.geo.coordinates[0] ) > 5.441022 &&
-        parseFloat( tweet.geo.coordinates[0] ) < 19.601194 &&
-        parseFloat( tweet.geo.coordinates[1] ) > 116.05957 &&
-        parseFloat( tweet.geo.coordinates[1] ) < 127.265625 ){
-      ev.emit( 'tweet_local', tweet );
-      emit( 'TWEET.LOCAL', tweet );
-    }
-    else {
-      ev.emit( 'tweet_overseas', tweet );
-      emit( 'TWEET.OVERSEAS', tweet, tweet.geo.coordinates );
-    }
-  }
   if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Pontevedra|RescuePH/i ) ){
+    if( tweet && tweet.geo && tweet.geo.coordinates ){
+      if( parseFloat( tweet.geo.coordinates[0] ) > 5.441022 &&
+          parseFloat( tweet.geo.coordinates[0] ) < 19.601194 &&
+          parseFloat( tweet.geo.coordinates[1] ) > 116.05957 &&
+          parseFloat( tweet.geo.coordinates[1] ) < 127.265625 ){
+        ev.emit( 'tweet_local', tweet );
+        emit( 'TWEET.LOCAL', tweet );
+      }
+      else {
+        ev.emit( 'tweet_overseas', tweet );
+        emit( 'TWEET.OVERSEAS', tweet, tweet.geo.coordinates );
+      }
+    }
     ev.emit( 'tweet', tweet );
     emit( 'TWEET.NOGEO', tweet );
+    if( tweet.coordinates ) console.error( 'NO GEO BUT YES COORDINATES!' );
   }
-  if( tweet.coordinates ) console.error( 'NO GEO BUT YES COORDINATES!' );
 });
 
 client1.start(
