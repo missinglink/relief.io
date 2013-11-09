@@ -9,10 +9,6 @@ Currently links to Disaster Relief Apps are stored in links.json.
 
 http://54.254.183.5
 
-## Phillipines Geo Data Files
-
-https://github.com/coryarmbrecht/Hack4Good--Typhoon-Haiyan/tree/master/data/geo
-
 ## Setting up for development
 
 Note: you will need `node` and `npm` installed first.
@@ -58,3 +54,7 @@ You should now be able to access the server here: `http://localhost:3000/`
 
 - Try to use bower where possible, record dependencies in `bower.json` or use the `--save` flag with `bower`
 - Other 3rd party code can live in `/public/vendor`.
+
+## Some Phillipines geo data files can be found here:
+
+https://github.com/coryarmbrecht/Hack4Good--Typhoon-Haiyan/tree/master/data/geo
