@@ -45,7 +45,7 @@ app.controller( 'MapIndexController', function( $scope ) {
 
     var tweet = message.val();
     addTweet( tweet );
-    // console.log( 'local', tweet );
+    console.log( 'local', tweet );
   });
 
   // tweets.overseas.on( 'child_added', function( message ){

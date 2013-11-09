@@ -3,6 +3,9 @@
   <div id="map"></div>
   <ul id="tweets">
     <li ng-repeat="tweet in tweets | reverse">
-      <a href="http://twitter.com/{{tweet.user.screen_name}}">@{{tweet.user.screen_name}}</a> "{{tweet.text}}"</li>
+      <a href="http://twitter.com/{{tweet.user.screen_name}}">
+        <!-- @{{tweet.user.screen_name}} -->
+        <img src="{{tweet.user.profile_image_url}}" />
+      </a> "{{tweet.text}}"</li>
   <ul>
 </section>
