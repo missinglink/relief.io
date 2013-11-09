@@ -59,7 +59,7 @@ You should now be able to access the server here: `http://localhost:3000/`
 
 ### Frontend
 
-The frontend is built with `angularjs`, which is pretty simple if you have experience with a javascript MVC framework. `Jquery` is also included.
+The frontend is built with `angularjs`, which is pretty simple if you have experience with a javascript MVC framework. `Jquery` & `Twitter Bootstrap` are also included.
 
 - Create a new directory for the feature `/public/features/myfeature`. (it may be easier to copy an existing one)
 - Modify `init.js` to set up your routes and rename the controllers etc.
