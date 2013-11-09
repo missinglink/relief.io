@@ -19,7 +19,7 @@ app.controller( 'MapIndexController', function( $scope ) {
 
     setTimeout( function(){
       popup._close();
-    }, 5000 );
+    }, 8000 );
   }
 
   var datestamp = (''+new Date().getTime()).slice(0,10);
