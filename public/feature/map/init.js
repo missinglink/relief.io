@@ -5,5 +5,4 @@ app.config( function( $routeProvider ) {
       controller: 'MapIndexController',
       templateUrl: '/feature/map/index.html'
     })
-	.otherwise({ redirectTo: '/' });
 });
