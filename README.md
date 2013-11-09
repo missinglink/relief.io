@@ -10,6 +10,7 @@ The app is built in nodejs/angular, uses firebase for the sockets & has some mon
 Please help out where you can, I'm happy for this repo to be the base for a bunch of projects that can all live at http://relief.io or you are free to fork it and create another site.
 
 Join in the chat here: https://www.hipchat.com/g9bBgsIwG
+
 Hackathon page: https://geekli.st/hackathon/52793a2660fb3f52d50001f8
 
 ## Setting up for development
