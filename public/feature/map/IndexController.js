@@ -66,21 +66,21 @@ app.controller( 'MapIndexController', function( $scope ) {
         if( Array.isArray( tweet.entities.user_mentions ) ){
           for( var i=0; i<tweet.entities.user_mentions.length; i++ ){
             tweet.text = tweet.text.replace( '@'+tweet.entities.user_mentions[i].screen_name, function( name ){
-              return '<a href="https://twitter.com/'+name.substr(1)+'" target="_new">'+name+'</a>';
+              return '<a href="https://twitter.com/'+name.substr(1)+'" target="_blank">'+name+'</a>';
             });
           }
         }
         if( Array.isArray( tweet.entities.hashtags ) ){
           for( var i=0; i<tweet.entities.hashtags.length; i++ ){
             tweet.text = tweet.text.replace( '#'+tweet.entities.hashtags[i].text, function( tag ){
-              return '<a href="https://twitter.com/search?q='+tag.substr(1)+'&src=typd" target="_new">'+tag+'</a>';
+              return '<a href="https://twitter.com/search?q='+tag.substr(1)+'&src=typd" target="_blank">'+tag+'</a>';
             });
           }
         }
         if( Array.isArray( tweet.entities.urls ) ){
           for( var i=0; i<tweet.entities.urls.length; i++ ){
             tweet.text = tweet.text.replace( tweet.entities.urls[i].url, function( link ){
-              return '<a href="'+link+'" target="_new">'+link+'</a>';
+              return '<a href="'+link+'" target="_blank">'+link+'</a>';
             });
           }
         }
