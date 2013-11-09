@@ -73,6 +73,13 @@ The frontend is built with `angularjs`, which is pretty simple if you have exper
 - Edit `/public/app.jade` in the `// ========= Features =========` section to add your new feature. (it may be easier to copy an existing one)
 - You can modify `/public/features/menu/menu.html` to add your new feature to the top menu.
 
+### Adding information to a map
+
+The mapping lib `leafletjs` is included and some example code can be found in the `map` feature directory. ( `leaflet` functions all start with `L.` )
+
+- http://leafletjs.com/
+- https://github.com/missinglink/relief.io/blob/master/public/feature/map/IndexController.js
+
 ### Backend
 
 The backend is built with `nodejs`. If you have experience with `ruby` or `PHP` etc you should be fine copy->pasting to get you started. The server is based on `expressjs` & the sockets are using `firebase`.
