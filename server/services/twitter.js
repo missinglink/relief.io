@@ -54,7 +54,6 @@ client1.on( 'tweet', function ( tweet ) {
     }
     ev.emit( 'tweet', tweet );
     emit( 'TWEET.NOGEO', tweet );
-    if( tweet.coordinates ) console.error( 'NO GEO BUT YES COORDINATES!' );
   }
 });
 

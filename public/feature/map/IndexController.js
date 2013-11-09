@@ -3,28 +3,27 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
 
   $scope.tweets = [];
 
-  // be kind to the browsers memory and delete old tweets every 10 secs
+  // Be kind to the browsers memory and delete old tweets every 10 secs
   setInterval( function(){
     $scope.tweets = $scope.tweets.splice(-30);
   }, 10000 );
 
+  // Create a new popup on the map
   function addTweet( tweet )
   {
     var popup = L.popup()
         .setLatLng( tweet.geo.coordinates )
         .setContent( tweet.text )
         .addTo( $scope.map );
-
     // console.log( popup );
 
+    // Close it after some time
     setTimeout( function(){
       popup._close();
     }, 8000 );
   }
 
-  var datestamp = (''+new Date().getTime()).slice(0,10);
-  // console.log( 'datestamp', datestamp );
-
+  // Connect to firebase to get tweets
   var myRootRef = new Firebase( $rootScope.config['firebase.host'] );
   var tweets = {
     local: myRootRef.child('tweet_local').limit(5),
@@ -32,35 +31,34 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
     all: myRootRef.child('tweet').limit(5)
   }
 
+  // Init the map
   $scope.map = L.map( 'map', { zoomControl:false } );
-
-	L.tileLayer.provider('Nokia.terrainDay', {
-	  devID: 'pT52rESblK2luN6D0562LQ',
-	  appId: 'yKqVsh6qFoKdZQmFP2Cn'
-	}).addTo($scope.map);
-
+  L.tileLayer.provider('Nokia.terrainDay', {
+    devID: 'pT52rESblK2luN6D0562LQ',
+    appId: 'yKqVsh6qFoKdZQmFP2Cn'
+  }).addTo( $scope.map );
+  
+  // Center map
   $scope.map.setView( [ 12.46876, 118.698438 ], 6 );
 
+ // On local (philippine) tweets
   tweets.local.on( 'child_added', function( message ){
-
     var tweet = message.val();
     addTweet( tweet );
     // console.log( 'local', tweet );
   });
 
+  // On overseas tweets
   // tweets.overseas.on( 'child_added', function( message ){
-
   //   var tweet = message.val();
   //   addTweet( tweet );
   //   console.log( 'overseas', tweet.text );
   // });
 
+  // On any tweet the server sends
   tweets.all.on( 'child_added', function( message ){
 
     var tweet = message.val();
-    // console.log( 'tweet', message.val() );
-    // $.flash(tweet.text);
-    // console.log( 'push tweet', tweet.text );
     $scope.$apply( function(){
       if( tweet.entities ){
         if( Array.isArray( tweet.entities.user_mentions ) ){
