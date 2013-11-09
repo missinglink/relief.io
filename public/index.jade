@@ -45,6 +45,10 @@ html(data-ng-app="hack4good")
     script(src="/feature/example/init.js")
     link(rel="stylesheet", href="/feature/example/example.css")
 
+    // Menu 
+    script(src="/feature/menu/MenuController.js")
+    script(src="/feature/menu/init.js")
+
     // Home 
     script(src="/feature/home/IndexController.js")
     script(src="/feature/home/init.js")
@@ -67,17 +71,7 @@ html(data-ng-app="hack4good")
 
     .container
       .header
-        ul.nav.nav-pills.pull-right
-          li.active
-            a(href="#/")
-              i.icon-home &nbsp;Home
-          li
-            a(href="#/twitter")
-              i.icon-twitter &nbsp;Twitter
-          li
-            a(href="#/map")
-              i.icon-globe &nbsp;Map
-
+        .ribbon(data-ng-include="'/feature/menu/menu.html'")
         h3.text-muted &nbsp;
 
       // Main Content Section 

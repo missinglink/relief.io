@@ -1,0 +1,14 @@
+
+<div ng-controller="MenuController">
+  <ul class="nav nav-pills pull-right">
+    <li ng-class="{ active: isActive('/')}">
+      <a href="#/"><i class="icon-home">&nbsp;Home</i></a>
+    </li>
+    <li ng-class="{ active: isActive('/twitter')}">
+      <a href="#/twitter"><i class="icon-twitter">&nbsp;Twitter</i></a>
+    </li>
+    <li ng-class="{ active: isActive('/map')}">
+      <a href="#/map"><i class="icon-globe">&nbsp;Map</i></a>
+    </li>
+  </ul>
+</div>
