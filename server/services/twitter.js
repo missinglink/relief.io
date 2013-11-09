@@ -46,12 +46,17 @@ client1.on( 'tweet', function ( tweet ) {
       emit( 'TWEET.OVERSEAS', tweet, tweet.geo.coordinates );
     }
   }
-  ev.emit( 'tweet', tweet );
-  emit( 'TWEET.NOGEO', tweet );
+  if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Pontevedra|RescuePH/i ) ){
+    ev.emit( 'tweet', tweet );
+    emit( 'TWEET.NOGEO', tweet );
+  }
   if( tweet.coordinates ) console.error( 'NO GEO BUT YES COORDINATES!' );
 });
 
-client1.start(['Haiyan','Yolanda','Typhoon','Philippines','#YolandaPH','#Pontevedra','#RescuePH']);
+client1.start(
+  ['Haiyan','Yolanda','Typhoon','Philippines','#YolandaPH','#Pontevedra','#RescuePH'],
+  ['116.05957,5.441022','127.265625,19.601194']
+);
 // client1.start(null,['116.05957,5.441022','127.265625,19.601194']);
 
 module.exports = ev;
