@@ -5,6 +5,10 @@ Repo for ideas, data, and code to help with disaster relief.
 
 Currently links to Disaster Relief Apps are stored in links.json.
 
+## Phillipines Geo Data Files
+
+https://github.com/coryarmbrecht/Hack4Good--Typhoon-Haiyan/tree/master/data/geo
+
 ## Setting up for development
 
 Note: you will need `node` and `npm` installed first.
