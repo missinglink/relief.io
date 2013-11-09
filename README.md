@@ -3,7 +3,7 @@ Hack4Good - Typhoon Haiyan
 
 This is a repo for ideas, data, and code to help with disaster relief in the Philippines.
 
-The app is built in nodejs/angular, uses firebase for the sockets & has some mongodb examples.
+The app is built with `nodejs`+`angular`, uses `firebase` for the sockets & has some `mongodb` examples.
 
 ## Contributing to the project
 
@@ -72,7 +72,7 @@ The frontend is built with `angularjs`, which is pretty simple if you have exper
 
 ### Backend
 
-The frontend is built with `nodejs`. If you have experience with `ruby` or `PHP` etc you should be fine copy->pasting to get you started. The server is based on `expressjs` & the sockets are using `firebase`.
+The backend is built with `nodejs`. If you have experience with `ruby` or `PHP` etc you should be fine copy->pasting to get you started. The server is based on `expressjs` & the sockets are using `firebase`.
 
 - Create a new controller in `/server/controllers` or a service in `/server/services`. (it may be easier to copy an existing one)
 - Edit `/server/app.js` in the `// Controllers` or `// Services` section to add your new feature. (it may be easier to copy an existing one)
