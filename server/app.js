@@ -39,6 +39,9 @@ app.get( '/', function( req, res ){ res.render( 'index' ); });
 // Controllers
 require( './controllers/example' )( app );
 
+// Services
+require( './sockets/twitter' );
+
 // We're up & running!
 app.listen( config['http.port'] );
 console.log( "Server running in env %s on port %d", app.get( 'env' ), app.get( 'port' ) );

@@ -1,4 +1,7 @@
 
 <section class="content">
   <div id="map"></div>
+  <ul id="tweets">
+    <li ng-repeat="tweet in tweets | reverse">@{{tweet.user.screen_name}} "{{tweet.text}}"</li>
+  <ul>
 </section>
