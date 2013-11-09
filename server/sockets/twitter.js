@@ -1,8 +1,9 @@
 
+var config = require('../../config');
 var twitterService = require('../services/twitter');
 
 var Firebase = require('firebase');
-var myRootRef = new Firebase('https://reliefio.firebaseio.com');
+var myRootRef = new Firebase( config['firebase.host'] );
 
 var tweets = {
   local: myRootRef.child('tweet_local'),

@@ -1,5 +1,5 @@
 
-app.controller( 'MapIndexController', function( $scope ) {
+app.controller( 'MapIndexController', function( $rootScope, $scope ) {
 
   $scope.tweets = [];
 
@@ -25,14 +25,14 @@ app.controller( 'MapIndexController', function( $scope ) {
   var datestamp = (''+new Date().getTime()).slice(0,10);
   // console.log( 'datestamp', datestamp );
 
-  var myRootRef = new Firebase('https://reliefio.firebaseio.com');
+  var myRootRef = new Firebase( $rootScope.config['firebase.host'] );
   var tweets = {
     local: myRootRef.child('tweet_local').limit(5),
     overseas: myRootRef.child('tweet_overseas').limit(5),
     all: myRootRef.child('tweet').limit(5)
   }
 
-  $scope.map = L.map('map');
+  $scope.map = L.map( 'map', { zoomControl:false } );
 
 	L.tileLayer.provider('Nokia.terrainDay', {
 	  devID: 'pT52rESblK2luN6D0562LQ',

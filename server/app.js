@@ -22,8 +22,8 @@ app.use( express.session({ secret: 'fsdffsdfsdfsfsdfd' }));
 app.use( flash() );
 app.configure(function(){
   app.use(function(req, res, next){
-    res.locals.user = req.user;
-    res.locals.flash = req.flash();
+    res.locals.config = {};
+    res.locals.config['firebase.host'] = config['firebase.host'];
     next();
   });
 });

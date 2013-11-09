@@ -70,7 +70,7 @@ html(data-ng-app="hack4good")
     // .. more features
   
   // Pass View & Session Variables from Server Side to Angular
-  body(ng-init="flash=#{JSON.stringify(flash)}; user=#{JSON.stringify(user)};")
+  body(ng-init="user=#{JSON.stringify(user)}; config=#{JSON.stringify(config)};")
 
     // Github Ribbon (fork me) 
     .ribbon(data-ng-include="'/feature/home/github-ribbon.html'")
