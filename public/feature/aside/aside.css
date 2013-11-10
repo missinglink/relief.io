@@ -1,0 +1,36 @@
+
+.aside {
+  position: fixed;
+  top: 40px;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  background-color: rgba(220,220,220,0.8);
+}
+
+.aside .panel p,
+.aside .section p {
+  margin: 0;
+  padding: 0;
+}
+
+.aside .head {
+  background-color: #bbb;
+  margin: 0 0 5px 0;
+  padding: 20px;
+  border-bottom: solid 1px #aaa;
+}
+
+.aside .panel {
+  /*background-color: #ddd;*/
+  margin: 5px;
+  padding: 20px;
+}
+
+.aside .section {
+  background-color: #ddd;
+  margin: 10px 0px;
+  padding: 20px 10px;
+  border-top: solid 1px #cdc;
+  border-bottom: solid 1px #cdc;
+}

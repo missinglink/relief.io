@@ -13,12 +13,6 @@ h1, h2, h3, h4 {
   clear:both;
 }
 
-.header {
-  margin: 10px 20px 10px 10px;
-  overflow: hidden;
-  z-index: 100;
-}
-
 .github-icon {
   background: #ddd;
   top: 0;
@@ -50,7 +44,6 @@ h1, h2, h3, h4 {
   position: relative;
   top: .3em;
 }
-
 
 
 

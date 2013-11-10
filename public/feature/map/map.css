@@ -12,6 +12,7 @@
 	list-style: none;
 	overflow: hidden;
 	width: 45%;
+  display:none;
 	/*overflow-y: auto;*/
 }
 
