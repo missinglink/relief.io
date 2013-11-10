@@ -58,7 +58,7 @@ client1.on( 'tweet', function ( tweet ) {
 });
 
 client1.start(
-  ['Haiyan','Yolanda','Typhoon',,'Relief','Rescue','Damage','Victim','Donate','#YolandaPH','#Pontevedra','#moveph','#rescueph','#reliefph','#floodph','#haiyan','#weatheralert','#bayanmo'],
+  ['Haiyan','Yolanda','Typhoon','Relief','Rescue','Damage','Victim','Donate','#YolandaPH','#Pontevedra','#moveph','#rescueph','#reliefph','#floodph','#haiyan','#weatheralert','#bayanmo'],
   ['116.05957,5.441022','127.265625,19.601194']
 );
 // client1.start(null,['116.05957,5.441022','127.265625,19.601194']);
