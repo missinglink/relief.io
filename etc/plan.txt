@@ -1,0 +1,18 @@
+I'd like to start on:
+
+- Building out a browser/mobile layout for the web app
+- Allowing people to add POIs (points of interest)
+
+Each POI will have:
+- title / description
+- go location
+- a set of links (to news etc)
+- a set of 'requires' facets
+- a set of 'provides' facets
+
+Facets will be things like:
+- transport
+- food
+- healthcare etc
+
+The idea is that when news comes in about a bridge working etc then someone can plot this on the graph. I'd also like to tap in to the foursquare API to let people know when supermarkets etc open.
