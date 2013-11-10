@@ -3,10 +3,6 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   $scope.tweets = [];
   $scope.loadedTweets = [];
 
-  // setInterval( function(){
-  //   $scope.tweets = $scope.tweets.splice(-30);
-  // }, 10000 );
-
   // Create a new popup on the map
   function addTweet( tweet ){
     var popup = L.popup()
@@ -97,5 +93,4 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
       updateTweetCount()
     }
   });
-
 });
