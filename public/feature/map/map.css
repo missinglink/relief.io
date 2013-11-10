@@ -4,15 +4,20 @@
 	padding:0;
 	position: fixed;
 	display: block;
-	top: 10px;
+	top: 35px;
 	bottom: 0px;
 	left: 10px;
-	width: 400px;
 	/*background-color: #fff;*/
 	z-index: 101;
 	list-style: none;
 	overflow: hidden;
+	width: 45%;
 	/*overflow-y: auto;*/
+}
+
+#tweets .btn-primary {
+	margin-bottom: 10px;
+	width: 100%;
 }
 
 #map {
@@ -38,20 +43,37 @@ ul.nav a img {
 
 
 #tweets li {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
-	padding: 10px;
-	margin:0;
-	margin-right: 10px;
-	display:block;
-	position:relative;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 	background-color: #fff;
 	border: solid 1px #428BCA;
 	border-left: solid 4px #428BCA;
-	/*border-bottom: solid 1px #ccc;*/
-	margin-bottom: 5px;
-	/*background-color: rgba( 255, 255, 255 );*/
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
 	border-radius: 4px;
+	display:block;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	margin: 0px 10px 5px 0px;
+	padding: 10px;
+	position:relative;
+}
+
+@media (max-width: 480px) {
+
+  #tweets {
+   	left: 2px;
+    width: 50%;
+  }
+
+  ul.nav a {
+    margin-left: 3px;
+    padding: 6px 10px;
+  }
+
+  ul.nav i {
+    font-size: 22px;
+  }
+
+  ul.nav a span {
+    display: none;
+  }
 }

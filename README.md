@@ -1,13 +1,20 @@
-Hack4Good--Typhoon-Haiyan
-=========================
+Hack4Good - Typhoon Haiyan
+==========================
 
-Repo for ideas, data, and code to help with disaster relief.
+This is a repo for ideas, data, and code to help with disaster relief in the Philippines.
 
-Currently links to Disaster Relief Apps are stored in links.json.
+The app is built with `nodejs`+`angular`, uses `firebase` for the sockets & has some `mongodb` examples.
 
-## Static IP Until DNS Issue is sorted:
+## Contributing to the project
 
-http://54.254.183.5
+Please help out where you can, I'm happy for this repo to be the base for a bunch of projects that can all live at http://relief.io or you are free to fork it and create another site.
+
+Join in the chat here: https://www.hipchat.com/g9bBgsIwG
+
+Hackathon page: https://geekli.st/hackathon/52793a2660fb3f52d50001f8
+
+Please star the repo and spread the word on twitter.
+https://twitter.com/insertcoffee/statuses/399232533910409216
 
 ## Setting up for development
 
@@ -43,10 +50,10 @@ You should now be able to access the server here: `http://localhost:3000/`
 ### Frontend
 
 - All frontend files live in the `/public` directory.
-- Angularjs components are split up in to `features` in the `/public/features` dirctory.
+- Angularjs components are split up in to `features` in the `/public/features` directory.
 - Inside each feature can be controllers, services, styles and views related to that specific feature.
 - Each feature may include an `init.js` file to initialize routes and services.
-- Genenic styles & services can live in `/public/style` & `/public/services.js`.
+- Generic styles & services can live in `/public/style` & `/public/services.js`.
 - The main angular app config lives in `/public/app.js`
 - The layout file is rendered in jade and passes session and user info from the backend to the frontend. This lives in `/public/index.jade`
 
@@ -54,6 +61,31 @@ You should now be able to access the server here: `http://localhost:3000/`
 
 - Try to use bower where possible, record dependencies in `bower.json` or use the `--save` flag with `bower`
 - Other 3rd party code can live in `/public/vendor`.
+
+## Developing a new feature
+
+### Frontend
+
+The frontend is built with `angularjs`, which is pretty simple if you have experience with a javascript MVC framework. `Jquery`, `underscore` & `Twitter Bootstrap` are also included.
+
+- Create a new directory for the feature `/public/features/myfeature`. (it may be easier to copy an existing one)
+- Modify `init.js` to set up your routes and rename the controllers etc.
+- Edit `/public/app.jade` in the `// ========= Features =========` section to add your new feature. (it may be easier to copy an existing one)
+- You can modify `/public/features/menu/menu.html` to add your new feature to the top menu.
+
+### Adding information to a map
+
+The mapping lib `leafletjs` is included and some example code can be found in the `map` feature directory. ( `leaflet` functions all start with `L.` )
+
+- http://leafletjs.com/
+- https://github.com/missinglink/relief.io/blob/master/public/feature/map/IndexController.js
+
+### Backend
+
+The backend is built with `nodejs`. If you have experience with `ruby` or `PHP` etc you should be fine copy->pasting to get you started. The server is based on `expressjs` & the sockets are using `firebase`.
+
+- Create a new controller in `/server/controllers` or a service in `/server/services`. (it may be easier to copy an existing one)
+- Edit `/server/app.js` in the `// Controllers` or `// Services` section to add your new feature. (it may be easier to copy an existing one)
 
 ## Some Phillipines geo data files can be found here:
 

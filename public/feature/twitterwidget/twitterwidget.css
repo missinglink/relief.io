@@ -1,0 +1,13 @@
+.twitter-timeline-wrapper {
+  display: inline-block;
+  padding-right: 0px;
+  width: 48.5%;
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .twitter-timeline-wrapper {
+    display: block;
+    width: 97%;
+  }
+}

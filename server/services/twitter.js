@@ -33,7 +33,7 @@ function emit( label, tweet ) {
 
 var ev = new EventEmitter();
 client1.on( 'tweet', function ( tweet ) {
-  if( tweet.text.match( /Haiyan|Yolanda|Typhoon|Filipina|Pontevedra|Donate|Flood|Survive|Safety|Airport|Evacuat|Rescue|Relief|Damage|Victim|Injured|Hurt|Help|Aftermath|Storm/i ) ){
+  if( tweet.text && tweet.text.match( /Haiyan|Yolanda|Typhoon|Filipina|Pontevedra|Donate|Survive|Safety|Airport|Rescue|Relief|Damage|Injured|Hurt|Help|Aftermath|Storm/i ) ){
 
     var geo;
     if( tweet.geo ) geo = tweet.geo.coordinates;
@@ -54,12 +54,11 @@ client1.on( 'tweet', function ( tweet ) {
     }
     ev.emit( 'tweet', tweet );
     emit( 'TWEET.NOGEO', tweet );
-    if( tweet.coordinates ) console.error( 'NO GEO BUT YES COORDINATES!' );
   }
 });
 
 client1.start(
-  ['Haiyan','Yolanda','Typhoon','Flood','Relief','Rescue','Damage','Victim','Donate','#YolandaPH','#Pontevedra'],
+  ['Haiyan','Yolanda','Typhoon','Relief','Rescue','Damage','Victim','Donate','#YolandaPH','#Pontevedra','#moveph','#rescueph','#reliefph','#floodph','#haiyan','#weatheralert','#bayanmo'],
   ['116.05957,5.441022','127.265625,19.601194']
 );
 // client1.start(null,['116.05957,5.441022','127.265625,19.601194']);

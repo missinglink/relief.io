@@ -4,16 +4,16 @@ html(data-ng-app="hack4good")
 
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
-    // Web Fonts 
+    // Web Fonts
     link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Open+Sans", type="text/css")
-    
-    // Core Dependencies 
+
+    // Core Dependencies
     script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
     script(src="/bower_components/underscore/underscore-min.js")
     script(type="text/javascript", src="/bower_components/angular/angular.js")
     script(type="text/javascript", src="/bower_components/jquery-timeago/jquery.timeago.js")
-    
-    // Twitter Bootstrap 
+
+    // Twitter Bootstrap
     script(src="/bower_components/bootstrap/dist/js/bootstrap.min.js")
     link(rel="stylesheet", href="/bower_components/bootstrap/dist/css/bootstrap.min.css")
     link(rel="stylesheet", href="/bower_components/font-awesome/css/font-awesome.css")
@@ -30,55 +30,55 @@ html(data-ng-app="hack4good")
     link(rel="stylesheet", href="/vendor/jquery.flash.css")
     script(type="text/javascript", src="/vendor/jquery.flash.js")
 
-    // 3rd Party Angular Modules 
+    // 3rd Party Angular Modules
     script(type="text/javascript", src="/bower_components/angular-flash/dist/angular-flash.js")
 
-    // File Uploads 
+    // File Uploads
     script(src="/bower_components/angularjs-file-upload/angular-file-upload.min.js")
-    
-    // Stylesheets 
+
+    // Stylesheets
     link(rel="stylesheet", href="/style/layout.css")
-    
-    // Angular JS App 
+
+    // Angular JS App
     script(src="/app.js")
     script(src="/services.js")
-    
-    // ========= Features ========= 
-    
-    // Example 
+
+    // ========= Features =========
+
+    // Example
     script(src="/feature/example/IndexController.js")
     script(src="/feature/example/init.js")
     link(rel="stylesheet", href="/feature/example/example.css")
 
-    // Menu 
+    // Menu
     script(src="/feature/menu/MenuController.js")
     script(src="/feature/menu/init.js")
 
-    // Home 
+    // Home
     script(src="/feature/home/IndexController.js")
     script(src="/feature/home/init.js")
 
-    // Map 
+    // Map
     script(src="/feature/map/IndexController.js")
     script(src="/feature/map/init.js")
     link(rel="stylesheet", href="/feature/map/map.css")
 
-    // Twitter 
+    // Twitter
     script(src="/feature/twitterwidget/IndexController.js")
     script(src="/feature/twitterwidget/init.js")
+    link(rel="stylesheet", href="/feature/twitterwidget/twitterwidget.css")
 
     // .. more features
-  
-  // Pass View & Session Variables from Server Side to Angular
-  body(ng-init="flash=#{JSON.stringify(flash)}; user=#{JSON.stringify(user)};")
 
-    // Github Ribbon (fork me) 
-    .ribbon(data-ng-include="'/feature/home/github-ribbon.html'")
+  // Pass View & Session Variables from Server Side to Angular
+  body(ng-init="user=#{JSON.stringify(user)}; config=#{JSON.stringify(config)};")
+
+    // Github Icon (fork link)
+    .github-icon(data-ng-include="'/feature/home/github-icon.html'")
 
     .container
       .header
         .menu(data-ng-include="'/feature/menu/menu.html'")
-        h3.text-muted &nbsp;
 
-      // Main Content Section 
+      // Main Content Section
       #main(data-ng-view="")
