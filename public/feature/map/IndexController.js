@@ -88,7 +88,6 @@ app.controller( 'MapIndexController', function( $scope ) {
       }
       $scope.tweets.push( tweet );
     });
-
     // if( tweet.text.match( /yfrog|twitpic|twimg|twitter|img|pic/ ) ){
     //   console.log( tweet.text );
     // }
@@ -102,5 +101,41 @@ app.controller( 'MapIndexController', function( $scope ) {
       // }
     // }
   });
+
+  navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        // Successful! 
+        /*
+        alert(
+          pos.coords.latitude + ":" + pos.coords.longitude + ":" + pos.coords.accuracy
+        );
+        */
+        console.log("Latitude: " + pos.coords.latitude);
+        console.log("Longitude: " + pos.coords.longitude);
+
+        $('#login-lon').val([ pos.coords.longitude ]);
+        $('#login-lat').val([ pos.coords.latitude ]);
+        //$('#login-loc').val();
+
+        /*
+        var map = L.map('map').setView([pos.coords.latitude, pos.coords.longitude], 17);
+
+        L.tileLayer('http://{s}.tile.cloudmade.com/233b2eebc57a4adcb92e00d5cd40a90e/997/256/{z}/{x}/{y}.png', {
+            attribution: '',
+            maxZoom: 18
+        }).addTo(map);
+
+        var marker = L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map);
+        */
+    }, function(error) {
+      alert("Error!");
+    },
+    {
+      // Options for geolocation
+      maximumAge: 10000,
+      timeout: 10000,
+      enableHighAccuracy: true
+    }
+    );
 
 });
