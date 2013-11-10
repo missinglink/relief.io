@@ -3,6 +3,11 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   $scope.tweets = [];
   $scope.loadedTweets = [];
 
+ // Be kind to the browsers memory and delete old tweets every 10 secs
+  setInterval( function(){
+    $scope.tweets = $scope.tweets.splice(-30);
+  }, 10000 );
+
   // Create a new popup on the map
   function addTweet( tweet ){
     var popup = L.popup()
@@ -79,9 +84,17 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
             });
           }
         }
+        // console.log( JSON.stringify( tweet.entities.urls ) );
       }
     });
   };
+
+  // On overseas tweets
+  // tweets.overseas.on( 'child_added', function( message ){
+  //   var tweet = message.val();
+  //   addTweet( tweet );
+  //   console.log( 'overseas', tweet.text );
+  // });
 
   tweets.all.on( 'child_added', function( message ){
     var tweet = message.val();
@@ -92,5 +105,18 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
       $scope.tweets.push( tweet );
       updateTweetCount()
     }
+
+    // if( tweet.text.match( /yfrog|twitpic|twimg|twitter|img|pic/ ) ){
+    //   console.log( tweet.text );
+    // }
+
+    // if( tweet.entities ){
+      // console.log( 'tweet.entities', tweet.entities );
+      // if( tweet.entities.urls ){
+      //   console.log( tweet.entities.urls.map( function( url ){
+      //     return url.display_url;
+      //   }));
+      // }
+    // }
   });
 });
