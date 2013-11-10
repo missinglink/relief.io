@@ -8,11 +8,6 @@ h1, h2, h3, h4 {
   font-family: 'Open Sans', sans-serif;
 }
 
-.content {
-  padding-top: 20px;
-  clear:both;
-}
-
 .github-icon {
   background: #ddd;
   top: 0;
