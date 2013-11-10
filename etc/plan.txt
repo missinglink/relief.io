@@ -5,7 +5,7 @@ I'd like to start on:
 
 Each POI will have:
 - title / description
-- go location
+- geo location
 - a set of links (to news etc)
 - a set of 'requires' facets
 - a set of 'provides' facets

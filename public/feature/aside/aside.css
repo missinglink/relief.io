@@ -34,3 +34,14 @@
   border-top: solid 1px #cdc;
   border-bottom: solid 1px #cdc;
 }
+
+@media (max-width: 700px) {
+
+  .aside {
+    top: 40%;
+    position: fixed;
+    /*position: relative;*/
+    width: 100%;
+  }
+
+}
