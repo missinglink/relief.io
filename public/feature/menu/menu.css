@@ -1,0 +1,48 @@
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  overflow: hidden;
+  z-index: 100;
+  background-color: rgba(0,0,0,0.8);
+  height: 40px;
+}
+
+.logo h1 {
+  margin: 10px 15px 0 5px;
+  padding: 0;
+  color: rgba(255,255,255,0.4);
+  font-size: 18px;
+}
+
+ul.nav a {
+  background-color: transparent !important;
+  margin-left: 0px !important;
+  border-left: solid 1px #333;
+  height: 40px;
+}
+ul.nav a:hover {
+  background-color: black !important;
+}
+ul.nav li:last-child a {
+  border-right: solid 1px #333;
+}
+ul.nav {
+  padding-left: 10px;
+}
+.nav-pills > li > a {
+  border-radius: 0;
+}
+.nav-pills > li + li {
+  margin-left: 0px !important;
+}
+.nav > li > a {
+  color: #fff;
+  font-size: 24px;
+  position: relative;
+  display: block;
+  padding: 3px 15px;
+}

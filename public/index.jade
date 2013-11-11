@@ -52,7 +52,12 @@ html(data-ng-app="hack4good")
 
     // Menu
     script(src="/feature/menu/MenuController.js")
-    script(src="/feature/menu/init.js")
+    link(rel="stylesheet", href="/feature/menu/menu.css")
+
+    // Aside (infobar)
+    script(src="/feature/aside/AsideController.js")
+    script(src="/feature/aside/init.js")
+    link(rel="stylesheet", href="/feature/aside/aside.css")
 
     // Home
     script(src="/feature/home/IndexController.js")
@@ -74,11 +79,12 @@ html(data-ng-app="hack4good")
   body(ng-init="user=#{JSON.stringify(user)}; config=#{JSON.stringify(config)};")
 
     // Github Icon (fork link)
-    .github-icon(data-ng-include="'/feature/home/github-icon.html'")
+    // .github-icon(data-ng-include="'/feature/home/github-icon.html'")
+
+    .header
+      .menu(data-ng-include="'/feature/menu/menu.html'")
 
     .container
-      .header
-        .menu(data-ng-include="'/feature/menu/menu.html'")
 
       // Main Content Section
       #main(data-ng-view="")

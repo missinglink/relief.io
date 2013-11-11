@@ -38,7 +38,7 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   }).addTo( $scope.map );
 
   // Center map
-  $scope.map.setView( [ 12.46876, 118.698438 ], 6 );
+  $scope.map.setView( [ 12.46876, 125.698438 ], 6 );
 
  // On local (philippine) tweets
   tweets.local.on( 'child_added', function( message ){
