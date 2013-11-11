@@ -5,10 +5,13 @@
       <h1>relief.io</h1>
     </li>
     <li ng-class="{ active: isActive('/home')}">
-      <a href="#/home"><i class="icon-home"></i></a>
+      <a href="#/home"><i class="fa fa-home"></i></a>
     </li>
     <li ng-class="{ active: isActive('/map')}">
-      <a href="#/map"><i class="icon-globe"></i></a>
+      <a href="#/map"><i class="fa fa-globe"></i></a>
+    </li>
+    <li ng-show="isActive('/map')">
+      <a ng-click="newPoi()" href="#/map"><i class="fa fa-plus"></i></a>
     </li>
 <!-- 
     <li class="dropdown" ng-class="{ active: isActive('/findaid')}">

@@ -1,7 +1,56 @@
 
-app.controller( 'MapIndexController', function( $rootScope, $scope ) {
+
+app.controller( 'MapIndexController', function( $rootScope, $scope, Firebase, MapService, PoiService, safeApply ) {
+
+  // Init the map
+  $scope.map = MapService.map;
+
   $scope.tweets = [];
   $scope.loadedTweets = [];
+
+  $rootScope.$on( 'poi:new', function(){
+    PoiService.save( {
+        title: '',
+        description: '',
+        icon: 'dot-circle-o',
+        color: 'blue',
+        geo: $scope.map.getCenter()
+      }, function( res ){
+      console.log( 'poi new', res.status, res.data );
+      MapService.updateMarker( res.data, true );
+      $rootScope.$emit( 'poi:select', res.data._id );
+    });
+  });
+
+  $rootScope.$on( 'poi:draggable', function( event, id, bool ){
+    var marker = MapService.findMarker( id );
+    if( marker ){
+      if( bool ){ marker.dragging.enable(); }
+      else { marker.dragging.disable(); }
+    }
+  });
+
+  $rootScope.$on( 'poi:update', function( event, poi ){
+    PoiService.save( poi, function( res ){
+      console.log( 'poi update', res.status, res.data );
+    });
+  });
+
+  // wait for all child scopes to load
+  $scope.$on( '$viewContentLoaded', function(){
+
+    PoiService.loadAll( function( res ){
+      if( res && res.status === 200 && Array.isArray( res.data ) && res.data.length ){
+        for( var i=0; i<res.data.length; i++ ){
+          console.log( 'load marker' );
+          MapService.updateMarker( res.data[i] );
+        }
+        console.log( 'poi:select', res.data[0]._id );
+        $rootScope.$emit( 'poi:select', res.data[0]._id );
+      }
+    });
+
+  });
 
  // Be kind to the browsers memory and delete old tweets every 10 secs
   setInterval( function(){
@@ -23,22 +72,13 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   }
 
   // Connect to firebase to get tweets
-  var myRootRef = new Firebase( $rootScope.config['firebase.host'] );
+  var firebase = Firebase.host;
   var tweets = {
-    local: myRootRef.child('tweet_local').limit(5),
-    overseas: myRootRef.child('tweet_overseas').limit(5),
-    all: myRootRef.child('tweet').limit(5)
+    local: firebase.child('tweet_local').limit(5),
+    overseas: firebase.child('tweet_overseas').limit(5),
+    all: firebase.child('tweet').limit(5)
   };
 
-  // Init the map
-  $scope.map = L.map( 'map', { zoomControl:false } );
-  L.tileLayer.provider('Nokia.terrainDay', {
-    devID: 'pT52rESblK2luN6D0562LQ',
-    appId: 'yKqVsh6qFoKdZQmFP2Cn'
-  }).addTo( $scope.map );
-
-  // Center map
-  $scope.map.setView( [ 12.46876, 125.698438 ], 6 );
 
  // On local (philippine) tweets
   tweets.local.on( 'child_added', function( message ){
@@ -55,13 +95,13 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   };
 
   updateTweetCount = function(tweet) {
-    $scope.$apply( function(){
+    safeApply( $scope, function(){
       $scope.tweetsCount ++;
     });
   };
 
   formatTweet = function(tweet) {
-    $scope.$apply( function(){
+    safeApply( $scope, function(){
       if( tweet.entities ){
         if( Array.isArray( tweet.entities.user_mentions ) ){
           for( var i=0; i<tweet.entities.user_mentions.length; i++ ){

@@ -38,9 +38,10 @@ app.get( '/', function( req, res ){ res.render( 'index' ); });
 
 // Controllers
 require( './controllers/example' )( app );
+require( './controllers/poi' )( app );
 
 // Services
-require( './sockets/twitter' );
+// require( './sockets/twitter' );
 
 // We're up & running!
 app.listen( config['http.port'] );
