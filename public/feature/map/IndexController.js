@@ -3,11 +3,6 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
   $scope.tweets = [];
   $scope.loadedTweets = [];
 
- // Be kind to the browsers memory and delete old tweets every 10 secs
-  setInterval( function(){
-    $scope.tweets = $scope.tweets.splice(-30);
-  }, 10000 );
-
   // Create a new popup on the map
   function addTweet( tweet ){
     var popup = L.popup()
@@ -49,14 +44,30 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
 
   $scope.tweetsCount = 0;
 
+  loadNTweets = function(n) {
+        var tweets = $scope.tweets.slice(0,n);
+        $scope.tweets.splice(0,n);
+        $scope.tweetsCount -= n;
+        for(var i in tweets) {
+            $scope.loadedTweets.splice(0,1)
+            $scope.loadedTweets.push( tweets[i] );
+        }
+  };
+
+
   $scope.loadMoreTweets = function(amount, message) {
-    $scope.loadedTweets = $scope.tweets.slice(0,4);
-     $scope.tweetsCount -= 5;
+    // button works only if there tweets to read
+    if( $scope.tweets.length > 0 && $scope.tweets.length < 6 ) {
+        loadNTweets($scope.tweets.length);
+    }
+    else if( $scope.tweets.length >= 6 ) {
+        loadNTweets(6);
+    }
   };
 
   updateTweetCount = function(tweet) {
     $scope.$apply( function(){
-      $scope.tweetsCount ++;
+      $scope.tweetsCount++;
     });
   };
 
@@ -103,8 +114,13 @@ app.controller( 'MapIndexController', function( $rootScope, $scope ) {
       formatTweet(tweet);
       $scope.loadedTweets.push( tweet );
     } else {
-      $scope.tweets.push( tweet );
-      updateTweetCount()
+        // limit quantity of tweets on memory remove oldest with every new tweets
+        if($scope.tweets.length >= 100){
+            $scope.tweets = $scope.tweets.slice(1,$scope.tweets.length);
+        } else {
+            updateTweetCount()
+        }
+        $scope.tweets.push( tweet );
     }
 
     // if( tweet.text.match( /yfrog|twitpic|twimg|twitter|img|pic/ ) ){
