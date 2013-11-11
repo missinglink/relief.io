@@ -1,0 +1,171 @@
+{
+  "Regions":
+    [
+      "National Capital Region": {
+        "designation": "NCR",
+        "provinces": [
+          "Metro Manila"
+        ]
+      },
+      "Cordillera Administrative Region": {
+        "designation": "CAR",
+        "provinces": [
+          "Abra",
+          "Apayao",
+          "Benguet",
+          "Ifugao",
+          "Kalinga",
+          "Mountain Province"
+        ]
+      },
+      "Ilocos Region": {
+        "designation": "Region I",
+        "provinces": [
+          "Ilocos Norte",
+          "Ilocos Sur",
+          "La Union",
+          "Pangasinan"
+        ]
+      },
+      "Cagayan Valley": {
+        "designation": "Region II",
+        "provinces": [
+          "Batanes",
+          "Cagayan",
+          "Isabela",
+          "Nueva Vizcaya",
+          "Quirino"
+        ]
+      },
+      "Central Luzon": {
+        "designation": "Region III",
+        "provinces": [
+          "Aurora",
+          "Bataan",
+          "Bulacan",
+          "Nueva Ecija",
+          "Pampanga",
+          "Tarlac",
+          "Zambales"
+        ]
+      },
+      "CALABARZON": {
+        "designation": "Region IV-A",
+        "provinces": [
+          "Batangas",
+          "Cavite",
+          "Laguna",
+          "Quezon",
+          "Rizal"
+        ]
+      },
+      "MIMAROPA": {
+        "designation": "Region IV-B",
+        "provinces": [
+          "Marinduque",
+          "Occidental Mindoro",
+          "Oriental Mindoro",
+          "Palawan",
+          "Romblon"
+        ]
+      },
+      "Bicol Region": {
+        "designation": "Region V",
+        "provinces": [
+          "Albay",
+          "Camarines Norte",
+          "Camarines Sur",
+          "Catanduanes",
+          "Masbate",
+          "Sorsogon"
+        ]
+      },
+      "Western Visayas": {
+        "designation": "Region VI",
+        "provinces": [
+          "Aklan",
+          "Antique",
+          "Capiz",
+          "Guimaras",
+          "Iloilo",
+          "Negros Occidental"
+        ]
+      },
+      "Central Visayas": {
+        "designation": "Region VII",
+        "provinces": [
+          "Bohol",
+          "Cebu",
+          "Negros Oriental",
+          "Siquijor"
+        ]
+      },
+      "Eastern Visayas": {
+        "designation": "Region VIII",
+        "provinces": [
+          "Biliran",
+          "Eastern Samar",
+          "Leyte",
+          "Northern Samar",
+          "Samar",
+          "Southern Leyte"
+        ]
+      },
+      "Zamboanga Peninsula": {
+        "designation": "Region IX",
+        "provinces": [
+          "Zamboanga del Norte",
+          "Zamboanga del Sur",
+          "Zamboanga Sibugay"
+        ]
+      },
+      "Northern Midnanao": {
+        "designation": "Region X",
+        "provinces": [
+          "Bukidnon",
+          "Camiguin",
+          "Lanao del Norte",
+          "Misamis Occidental",
+          "Misamis Oriental"
+        ]
+      },
+      "Davao Region": {
+        "designation": "Region XI",
+        "provinces": [
+          "Compostela Valley",
+          "Davao del Norte",
+          "Davao del Sur",
+          "Davao Oriental"
+        ]
+      },
+      "SOCCSKSARGEN": {
+        "designation": "Region XIII",
+        "provinces": [
+          "Cotabato",
+          "Sarangani",
+          "South Cotabato",
+          "Sultan Kudarat"
+        ]
+      },
+      "Caraga Region": {
+        "designation": "Region XIII",
+        "provinces": [
+          "Agusan del Norte",
+          "Agusan del Sur",
+          "Dinagat Islands",
+          "Surigao del Norte",
+          "Surigao del Sur"
+        ]
+      },
+      "Autonomous Region in Muslim Mindanao": {
+        "designation": "ARMM",
+        "provinces": [
+          "Basilan",
+          "Lanao del Sur",
+          "Maguindanao",
+          "Sulu",
+          "Tawi-Tawi"
+        ]
+      }
+    ]
+}
