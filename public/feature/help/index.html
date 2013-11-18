@@ -1,0 +1,32 @@
+<div class="pane-help">    
+  Tell us about you
+  <form autocorrect="off">
+    <input type="text"
+      id='name'
+      class=''
+      maxlength="18"
+      ng-model='namequery'
+      placeholder="Your name"
+      required>
+  </form>
+  <form autocorrect="off">
+    <input type="text"
+      id='adress'
+      class=''
+      maxlength="18"
+      ng-model='adressquery'
+      placeholder="Your adress"
+      required>
+  </form>
+  
+  <div ng-repeat="item in needsData">
+    <input
+      type="checkbox"
+      value="{{item.value}}"
+      ng-click="changeCheck(item)">
+      {{item.name}}<br>
+  </div>
+
+  <button ng-click='save()'>Save me!</button>
+  
+</div>
